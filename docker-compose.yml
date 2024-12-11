@@ -16,8 +16,6 @@
 # - Detener el servicio: docker-compose down
 # """
 
-version: "3.9"
-
 services:
   mini-retro-cam:
     build:
