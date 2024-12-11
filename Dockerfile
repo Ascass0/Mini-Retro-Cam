@@ -14,7 +14,7 @@
 # - Ejecutar el contenedor: docker-compose up
 # """
 
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app

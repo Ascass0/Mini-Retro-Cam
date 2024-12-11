@@ -19,7 +19,7 @@
 version: "3.9"
 
 services:
-  app:
+  mini-retro-cam:
     build:
       context: .
       dockerfile: Dockerfile
