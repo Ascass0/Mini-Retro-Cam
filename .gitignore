@@ -1,0 +1,47 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Entornos virtuales
+env/
+venv/
+.venv/
+
+# Logs
+*.log
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración locales
+.env
+*.local
+
+# Docker
+docker-compose.override.yml
+.env.docker
+
+# Archivos de desarrollo
+production/
+tmp/
+*.sqlite3
+*.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Imágenes y dependencias generadas por el sistema
+dist/
+build/
+node_modules/
+coverage/
+htmlcov/
+
+# Cachés
+*.cache

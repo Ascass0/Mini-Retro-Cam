@@ -57,6 +57,7 @@ def main():
     except Exception as e:
         logger.error(f"Se produjo un error inesperado: {e}")
     finally:
+        cleanup()
         logger.info("Sistema apagado correctamente.")
 
 if __name__ == "__main__":
