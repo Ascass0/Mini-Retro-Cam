@@ -4,6 +4,7 @@ from utils.logger_config import logger_config
 import logging, time, signal
 
 logger = logging.getLogger(__name__)
+is_running = True
 
 
 def handle_exit_signal(signum, frame):
@@ -13,12 +14,18 @@ def handle_exit_signal(signum, frame):
         frame (object): Objeto del frame de la señal.
     """
     logger.info(f"Recibida la señal {signum}. Deteniendo aplicación...")
-    exit(0)
+    global is_running
+    is_running = False
+
+def cleanup():
+    """Limpieza final antes de salir del programa. """
+    logger.info("Realizando limpieza final...")
+    # TODO: Detener módulos o cerrar recursos
+    quit()
+
 
 def initialize_modules():
-    """
-    Inicializa los módulos principales del sistema.
-    """
+    """ Inicializa los módulos principales del sistema. """
     logger.info("Inicializando módulos principales...")
     
     # TODO: Crear instancias de los módulos principales
@@ -34,14 +41,12 @@ def initialize_modules():
 
 def run():
     """Bucle principal del sistema."""
-    while True:
+    while is_running:
         logger.debug("El sistema está funcionando correctamente.")
         time.sleep(1)
 
 def main():
     """ Función principal que coordina el inicio del sistema. """
-    logger.info("Iniciando Mini Cámara Retro...")
-
     try:
         logger.info('-------- MINI RETRO CAM --------')
         initialize_modules()
