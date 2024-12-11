@@ -1,0 +1,32 @@
+# """
+# docker-compose.yml
+
+# Este archivo orquesta la ejecución de servicios para el proyecto Mini Cámara Retro en un entorno de desarrollo.
+
+# Descripción:
+# - Define un servicio llamado `app`.
+# - Usa el Dockerfile para construir la imagen.
+# - Sincroniza los archivos locales con el contenedor para facilitar el desarrollo.
+# - Expone los puertos necesarios para la interacción local.
+# - Configura variables de entorno y comandos personalizados.
+
+# Instrucciones:
+# - Construir la imagen: docker-compose build
+# - Ejecutar el servicio: docker-compose up
+# - Detener el servicio: docker-compose down
+# """
+
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/src:/app/src  # Sincroniza el código fuente local con el contenedor
+    ports:
+      - "5000:5000"  # Puertos expuestos (si tienes una interfaz web más adelante)
+    environment:
+      - PYTHONUNBUFFERED=1  # Asegura que los logs se impriman inmediatamente
+    command: python3 src/main.py

@@ -1,0 +1,12 @@
+"""
+requirements.txt
+
+Este archivo lista todas las dependencias necesarias para el proyecto Mini Cámara Retro.
+
+Descripción:
+- Las dependencias definidas aquí se instalarán automáticamente dentro del contenedor de Docker o en el entorno local de desarrollo.
+
+Instrucciones:
+- Instalar dependencias en un entorno local:
+  pip install -r requirements.txt
+"""
